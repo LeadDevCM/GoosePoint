@@ -4,6 +4,10 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { Layout } from "@/components/layout";
 import Home from "@/pages/home";
+import Shop from "@/pages/shop";
+import Story from "@/pages/story";
+import Recipes from "@/pages/recipes";
+import Wholesale from "@/pages/wholesale";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -11,6 +15,10 @@ function Router() {
     <Layout>
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/shop" component={Shop} />
+        <Route path="/story" component={Story} />
+        <Route path="/recipes" component={Recipes} />
+        <Route path="/wholesale" component={Wholesale} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

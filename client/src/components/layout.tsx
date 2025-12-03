@@ -38,24 +38,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] pt-12">
               <nav className="flex flex-col space-y-6 text-lg font-serif">
-                <Link href="/" className="hover:text-accent transition-colors">Shop</Link>
-                <Link href="/" className="hover:text-accent transition-colors">Our Oysters</Link>
-                <Link href="/" className="hover:text-accent transition-colors">Our Story</Link>
-                <Link href="/" className="hover:text-accent transition-colors">Recipes</Link>
-                <Link href="/" className="hover:text-accent transition-colors">Wholesale</Link>
+                <Link href="/shop" className="hover:text-accent transition-colors">Shop</Link>
+                <Link href="/shop" className="hover:text-accent transition-colors">Our Oysters</Link>
+                <Link href="/story" className="hover:text-accent transition-colors">Our Story</Link>
+                <Link href="/recipes" className="hover:text-accent transition-colors">Recipes</Link>
+                <Link href="/wholesale" className="hover:text-accent transition-colors">Wholesale</Link>
               </nav>
             </SheetContent>
           </Sheet>
 
           {/* Desktop Nav Left */}
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-muted-foreground">
-            <Link href="/" className="hover:text-primary transition-colors uppercase">Shop</Link>
-            <Link href="/" className="hover:text-primary transition-colors uppercase">Oysters</Link>
+            <Link href="/shop" className="hover:text-primary transition-colors uppercase">Shop</Link>
+            <Link href="/shop" className="hover:text-primary transition-colors uppercase">Oysters</Link>
           </nav>
 
           {/* Logo */}
           <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 group">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center cursor-pointer">
               <span className="font-serif text-3xl font-bold tracking-tighter text-primary group-hover:text-accent transition-colors duration-300">
                 GOOSE POINT
               </span>
@@ -65,8 +65,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Desktop Nav Right */}
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-muted-foreground">
-            <Link href="/" className="hover:text-primary transition-colors uppercase">Recipes</Link>
-            <Link href="/" className="hover:text-primary transition-colors uppercase">Wholesale</Link>
+            <Link href="/recipes" className="hover:text-primary transition-colors uppercase">Recipes</Link>
+            <Link href="/wholesale" className="hover:text-primary transition-colors uppercase">Wholesale</Link>
           </div>
 
           {/* Cart */}
@@ -98,22 +98,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="font-sans text-xs font-bold uppercase tracking-widest mb-6 text-accent">Shop</h4>
               <ul className="space-y-4 text-sm text-primary-foreground/70">
-                <li><a href="#" className="hover:text-white transition-colors">Fresh Oysters</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Shucked Oysters</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Seafood Meals</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Oyster Shooters</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Gift Cards</a></li>
+                <li><Link href="/shop" className="hover:text-white transition-colors">Fresh Oysters</Link></li>
+                <li><Link href="/shop" className="hover:text-white transition-colors">Shucked Oysters</Link></li>
+                <li><Link href="/shop" className="hover:text-white transition-colors">Seafood Meals</Link></li>
+                <li><Link href="/shop" className="hover:text-white transition-colors">Oyster Shooters</Link></li>
+                <li><Link href="/shop" className="hover:text-white transition-colors">Gift Cards</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-sans text-xs font-bold uppercase tracking-widest mb-6 text-accent">Company</h4>
               <ul className="space-y-4 text-sm text-primary-foreground/70">
-                <li><a href="#" className="hover:text-white transition-colors">Our Story</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Sustainability</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Recipes</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Wholesale Inquiries</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+                <li><Link href="/story" className="hover:text-white transition-colors">Our Story</Link></li>
+                <li><Link href="/story" className="hover:text-white transition-colors">Sustainability</Link></li>
+                <li><Link href="/recipes" className="hover:text-white transition-colors">Recipes</Link></li>
+                <li><Link href="/wholesale" className="hover:text-white transition-colors">Wholesale Inquiries</Link></li>
+                <li><Link href="/wholesale" className="hover:text-white transition-colors">Contact Us</Link></li>
               </ul>
             </div>
 
