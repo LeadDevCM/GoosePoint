@@ -5,8 +5,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Layout } from "@/components/layout";
 import Home from "@/pages/home";
 import Shop from "@/pages/shop";
+import ProductDetail from "@/pages/product-detail";
 import Story from "@/pages/story";
 import Recipes from "@/pages/recipes";
+import RecipeDetail from "@/pages/recipe-detail";
 import Wholesale from "@/pages/wholesale";
 import NotFound from "@/pages/not-found";
 
@@ -16,8 +18,10 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/shop" component={Shop} />
+        <Route path="/product/:id" component={ProductDetail} />
         <Route path="/story" component={Story} />
         <Route path="/recipes" component={Recipes} />
+        <Route path="/recipes/:id" component={RecipeDetail} />
         <Route path="/wholesale" component={Wholesale} />
         <Route component={NotFound} />
       </Switch>
