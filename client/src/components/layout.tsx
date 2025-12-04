@@ -38,10 +38,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
           scrolled ? "bg-white/95 backdrop-blur-sm border-border shadow-sm" : "bg-white border-border"
         }`}
       >
-        <div className="container mx-auto px-4 md:px-6 h-24 flex items-center justify-between">
+        <div className="container mx-auto px-4 md:px-6 h-24 flex items-center justify-between relative">
           {/* Mobile Menu */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild className="md:hidden">
+            <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
               </Button>
@@ -59,7 +59,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </Sheet>
 
           {/* Desktop Nav Left */}
-          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-muted-foreground">
+          <nav className="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide text-muted-foreground">
             <Link href="/shop" className="hover:text-primary transition-colors uppercase">Shop</Link>
             <Link href="/shop" className="hover:text-primary transition-colors uppercase">Oysters</Link>
             <Link href="/blog" className="hover:text-primary transition-colors uppercase">Blog</Link>
@@ -68,7 +68,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           {/* Logo */}
           <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 group">
             <div className="flex flex-col items-center cursor-pointer">
-              <span className="font-serif text-3xl font-bold tracking-tighter text-primary group-hover:text-accent transition-colors duration-300">
+              <span className="font-serif text-3xl font-bold tracking-tighter text-primary group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
                 GOOSE POINT
               </span>
               <span className="text-[0.6rem] uppercase tracking-[0.4em] text-muted-foreground">Oysters</span>
@@ -76,7 +76,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </Link>
 
           {/* Desktop Nav Right */}
-          <div className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-muted-foreground">
+          <div className="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide text-muted-foreground ml-auto lg:ml-0">
             <Link href="/recipes" className="hover:text-primary transition-colors uppercase">Recipes</Link>
             <Link href="/wholesale" className="hover:text-primary transition-colors uppercase">Wholesale</Link>
           </div>
