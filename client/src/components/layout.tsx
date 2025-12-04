@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ShoppingCart, Menu, Instagram, Facebook, Twitter } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -6,6 +6,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [scrolled, setScrolled] = useState(false);
+  const [location] = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +16,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans selection:bg-primary selection:text-white">
@@ -30,7 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container mx-auto px-4 md:px-6 h-24 flex items-center justify-between">
           {/* Mobile Menu */}
-          <Sheet>
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
@@ -38,12 +48,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] pt-12">
               <nav className="flex flex-col space-y-6 text-lg font-serif">
-                <Link href="/shop" className="hover:text-accent transition-colors">Shop</Link>
-                <Link href="/shop" className="hover:text-accent transition-colors">Our Oysters</Link>
-                <Link href="/story" className="hover:text-accent transition-colors">Our Story</Link>
-                <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
-                <Link href="/recipes" className="hover:text-accent transition-colors">Recipes</Link>
-                <Link href="/wholesale" className="hover:text-accent transition-colors">Wholesale</Link>
+                <Link href="/shop" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Shop</Link>
+                <Link href="/shop" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Our Oysters</Link>
+                <Link href="/story" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Our Story</Link>
+                <Link href="/blog" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Blog</Link>
+                <Link href="/recipes" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Recipes</Link>
+                <Link href="/wholesale" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Wholesale</Link>
               </nav>
             </SheetContent>
           </Sheet>
