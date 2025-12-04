@@ -85,42 +85,42 @@ export default function Story() {
       </section>
 
       {/* Values Grid */}
-      <section className="py-24 bg-primary text-white">
+      <section className="py-24 bg-sky-50 text-primary">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="font-serif text-3xl md:text-4xl">Stewards of the Bay</h2>
-            <p className="text-white/80 text-lg font-light">
+            <p className="text-primary/80 text-lg font-light">
               We don't just farm oysters; we care for the ecosystem that sustains us all.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="space-y-4 text-center p-6 border border-white/10 bg-white/5 rounded-sm hover:bg-white/10 transition-colors">
-              <div className="mx-auto w-12 h-12 bg-accent/20 flex items-center justify-center rounded-full mb-4">
+            <div className="space-y-4 text-center p-6 border border-primary/10 bg-white/60 rounded-sm hover:bg-white transition-colors shadow-sm">
+              <div className="mx-auto w-12 h-12 bg-white flex items-center justify-center rounded-full mb-4 shadow-sm">
                 <ShieldCheck className="w-6 h-6 text-accent" />
               </div>
               <h3 className="font-serif text-xl">Safety First</h3>
-              <p className="text-white/70 text-sm leading-relaxed">
+              <p className="text-primary/70 text-sm leading-relaxed">
                 We pioneered High Hydrostatic Pressure (HHP) processing on the West Coast. This "Fresher Under Pressure" technology ensures our BlueSeal™ oysters are vibrio-free and safe to eat raw, without using heat.
               </p>
             </div>
 
-            <div className="space-y-4 text-center p-6 border border-white/10 bg-white/5 rounded-sm hover:bg-white/10 transition-colors">
-              <div className="mx-auto w-12 h-12 bg-accent/20 flex items-center justify-center rounded-full mb-4">
+            <div className="space-y-4 text-center p-6 border border-primary/10 bg-white/60 rounded-sm hover:bg-white transition-colors shadow-sm">
+              <div className="mx-auto w-12 h-12 bg-white flex items-center justify-center rounded-full mb-4 shadow-sm">
                 <Leaf className="w-6 h-6 text-accent" />
               </div>
               <h3 className="font-serif text-xl">Sustainable Future</h3>
-              <p className="text-white/70 text-sm leading-relaxed">
+              <p className="text-primary/70 text-sm leading-relaxed">
                 To combat ocean acidification, we built a solar-powered hatchery in Hawaii. This allows us to produce healthy seed stock year-round, ensuring a sustainable supply of shellfish for the entire West Coast.
               </p>
             </div>
 
-            <div className="space-y-4 text-center p-6 border border-white/10 bg-white/5 rounded-sm hover:bg-white/10 transition-colors">
-              <div className="mx-auto w-12 h-12 bg-accent/20 flex items-center justify-center rounded-full mb-4">
+            <div className="space-y-4 text-center p-6 border border-primary/10 bg-white/60 rounded-sm hover:bg-white transition-colors shadow-sm">
+              <div className="mx-auto w-12 h-12 bg-white flex items-center justify-center rounded-full mb-4 shadow-sm">
                 <Users className="w-6 h-6 text-accent" />
               </div>
               <h3 className="font-serif text-xl">Community Core</h3>
-              <p className="text-white/70 text-sm leading-relaxed">
+              <p className="text-primary/70 text-sm leading-relaxed">
                 From 10 acres to over 2,000, we've grown to support nearly 100 families in our small community of Bay Center. We are proud to provide year-round employment in a region we love.
               </p>
             </div>
