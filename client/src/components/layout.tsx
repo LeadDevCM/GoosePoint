@@ -41,6 +41,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Link href="/shop" className="hover:text-accent transition-colors">Shop</Link>
                 <Link href="/shop" className="hover:text-accent transition-colors">Our Oysters</Link>
                 <Link href="/story" className="hover:text-accent transition-colors">Our Story</Link>
+                <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
                 <Link href="/recipes" className="hover:text-accent transition-colors">Recipes</Link>
                 <Link href="/wholesale" className="hover:text-accent transition-colors">Wholesale</Link>
               </nav>
@@ -51,6 +52,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-muted-foreground">
             <Link href="/shop" className="hover:text-primary transition-colors uppercase">Shop</Link>
             <Link href="/shop" className="hover:text-primary transition-colors uppercase">Oysters</Link>
+            <Link href="/blog" className="hover:text-primary transition-colors uppercase">Blog</Link>
           </nav>
 
           {/* Logo */}
@@ -111,6 +113,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-4 text-sm text-primary-foreground/70">
                 <li><Link href="/story" className="hover:text-white transition-colors">Our Story</Link></li>
                 <li><Link href="/story" className="hover:text-white transition-colors">Sustainability</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
                 <li><Link href="/recipes" className="hover:text-white transition-colors">Recipes</Link></li>
                 <li><Link href="/wholesale" className="hover:text-white transition-colors">Wholesale Inquiries</Link></li>
                 <li><Link href="/wholesale" className="hover:text-white transition-colors">Contact Us</Link></li>

@@ -10,6 +10,7 @@ import Story from "@/pages/story";
 import Recipes from "@/pages/recipes";
 import RecipeDetail from "@/pages/recipe-detail";
 import Wholesale from "@/pages/wholesale";
+import Blog from "@/pages/blog";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -23,6 +24,7 @@ function Router() {
         <Route path="/recipes" component={Recipes} />
         <Route path="/recipes/:id" component={RecipeDetail} />
         <Route path="/wholesale" component={Wholesale} />
+        <Route path="/blog" component={Blog} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

@@ -113,6 +113,14 @@ export default function Shop() {
                     Tools
                   </button>
                 </li>
+                <li>
+                  <button 
+                    onClick={() => handleCategoryChange("Apparel")}
+                    className={`hover:text-primary transition-colors ${selectedCategory === "Apparel" ? "text-primary font-medium" : ""}`}
+                  >
+                    Apparel
+                  </button>
+                </li>
               </ul>
             </div>
 

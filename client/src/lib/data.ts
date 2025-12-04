@@ -102,6 +102,99 @@ export const products = [
     ],
     category: "Pantry",
     options: []
+  },
+  {
+    id: "alaskan-bullwhip-hot-sauce",
+    title: "Alaskan BullWhip Hot Sauce",
+    price: "$6.95",
+    description: "Hot sauce made with sustainable Alaskan Bull Kelp. Vegan and gluten free.",
+    fullDescription: "We are proud to offer a great addition to your hot sauce collection. Barnacle Foods has created an amazing set of sauces made with sustainable Alaskan Bull Kelp. The kelp used in this product is harvested from the pristine cold waters of the Alaskan coast on regenerative ocean farms and by sustainable foraging methods. These amazing products are vegan and gluten free. We know you will love these as an addition to your favorite Goose Point Oysters!",
+    images: [
+      "https://goosepoint.com/wp-content/uploads/2021/10/barnacle-foods-sauce-image-2021-scaled.jpeg",
+      "https://goosepoint.com/wp-content/uploads/2021/12/262700427_605324814021436_5982763010038579151_n.jpg"
+    ],
+    category: "Pantry",
+    options: [
+      { name: "Flavor", values: ["Kelp and Piri Piri", "Kelp and Serrano"] }
+    ]
+  },
+  {
+    id: "oyster-breading",
+    title: "Signature Spice Oyster Breading",
+    price: "$9.00",
+    description: "Designed specifically to compliment the taste of our Pacific Oysters.",
+    fullDescription: "Our Signature Spice Oyster Breading is designed specifically to compliment the taste of our Pacific Oysters. Sold in 16oz resealable bags. Ingredients: Cornmeal, Flour, Rice Flour, Bread Crumbs, Salt, Nonfat Dry Milk, Garlic Powder, Onion Powder, Chili Pepper, Black Pepper, Paprika, Cayenne Pepper.",
+    images: [
+      "https://goosepoint.com/wp-content/uploads/2016/07/breading-for-webpage.jpg",
+      "https://goosepoint.com/wp-content/uploads/2016/07/shucked-breaded-home-1.jpg",
+      "https://goosepoint.com/wp-content/uploads/2016/07/shucked-fried-home.jpg"
+    ],
+    category: "Pantry",
+    options: []
+  },
+  {
+    id: "cocktail-sauce",
+    title: "Oyster Cocktail Sauce",
+    price: "$5.00",
+    description: "Tangy, slightly spicy and oh-so-amazing with oysters.",
+    fullDescription: "As close to homemade as you can get. Our zesty signature cocktail sauce is the perfect companion to fresh Goose Point oysters and Pacific shellfish. We specially developed this sauce in conjunction with Oregon State University’s Food Laboratory to go with our oyster shooters and we are proud to offer it to the public.",
+    images: [
+      "https://goosepoint.com/wp-content/uploads/2016/06/cocktail-sauce-served.jpg",
+      "https://goosepoint.com/wp-content/uploads/2016/06/shucked-oysters-1.jpg"
+    ],
+    category: "Pantry",
+    options: []
+  },
+  {
+    id: "oyster-hoodie",
+    title: "Goose Point Oysters Hoodie",
+    price: "$45.00",
+    description: "Warm, comfortable hoodie featuring the Goose Point logo.",
+    fullDescription: "Stay warm on those chilly coastal days with our signature Goose Point Oysters hoodie. Made from a soft cotton blend, it's perfect for beach bonfires or just relaxing at home.",
+    images: [
+      "https://goosepoint.com/wp-content/uploads/2017/01/roay-blue-hoodie-front.png"
+    ],
+    category: "Apparel",
+    options: [
+      { name: "Size", values: ["Small", "Medium", "Large", "X-Large"] },
+      { name: "Color", values: ["Navy", "Black", "Gray"] }
+    ]
+  },
+  {
+    id: "shuck-yeah-apron",
+    title: "Shuck Yeah Oyster Apron",
+    price: "$26.50",
+    description: "Durable apron for your kitchen or shucking station.",
+    fullDescription: "Protect your clothes while you shuck and cook. This durable apron features our fun 'Shuck Yeah' design and handy pockets for your tools.",
+    images: [
+      "https://goosepoint.com/wp-content/uploads/2022/10/oyster-apron-300x300.png"
+    ],
+    category: "Apparel",
+    options: []
+  },
+  {
+    id: "trucker-hat",
+    title: "Goose Point Trucker Hat",
+    price: "$22.50",
+    description: "Classic mesh-back trucker hat with embroidered logo.",
+    fullDescription: "Keep the sun out of your eyes with our classic trucker hat. Features a breathable mesh back and an adjustable snap closure for a perfect fit.",
+    images: [
+      "https://goosepoint.com/wp-content/uploads/2022/06/283680898_410871584093955_7966066877628356496_n-300x300.jpg"
+    ],
+    category: "Apparel",
+    options: []
+  },
+  {
+    id: "shellfish-cookbook",
+    title: "Shellfish: The Cookbook",
+    price: "$24.95",
+    description: "A comprehensive guide to cooking shellfish by Chef Karen Barnaby.",
+    fullDescription: "Explore the world of shellfish with this comprehensive cookbook. Packed with delicious recipes and expert tips on selecting, cleaning, and cooking your favorite seafood.",
+    images: [
+      "https://goosepoint.com/wp-content/uploads/2024/05/Shellfish-the-cookbook-300x300.jpeg"
+    ],
+    category: "Tools",
+    options: []
   }
 ];
 
