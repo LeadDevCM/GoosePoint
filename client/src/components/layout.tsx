@@ -38,51 +38,63 @@ export function Layout({ children }: { children: React.ReactNode }) {
           scrolled ? "bg-white/95 backdrop-blur-sm border-border shadow-sm" : "bg-white border-border"
         }`}
       >
-        <div className="container mx-auto px-4 md:px-6 h-24 flex items-center justify-between relative">
-          {/* Mobile Menu */}
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] pt-12">
-              <nav className="flex flex-col space-y-6 text-lg font-serif">
-                <Link href="/shop" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Shop</Link>
-                <Link href="/shop" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Our Oysters</Link>
-                <Link href="/story" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Our Story</Link>
-                <Link href="/blog" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Blog</Link>
-                <Link href="/recipes" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Recipes</Link>
-                <Link href="/wholesale" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Wholesale</Link>
-              </nav>
-            </SheetContent>
-          </Sheet>
+        <div className="container mx-auto px-4 md:px-6 h-24 grid grid-cols-[auto_1fr_auto] lg:grid-cols-[1fr_auto_1fr] items-center gap-4">
+          {/* Mobile Menu Toggle - Visible on Mobile */}
+          <div className="lg:hidden flex justify-start">
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[300px] pt-12">
+                <nav className="flex flex-col space-y-6 text-lg font-serif">
+                  <Link href="/shop" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Shop</Link>
+                  <Link href="/shop" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Our Oysters</Link>
+                  <Link href="/story" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Our Story</Link>
+                  <Link href="/blog" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Blog</Link>
+                  <Link href="/recipes" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Recipes</Link>
+                  <Link href="/wholesale" className="hover:text-accent transition-colors" onClick={closeMobileMenu}>Wholesale</Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
 
-          {/* Desktop Nav Left */}
-          <nav className="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide text-muted-foreground">
+          {/* Desktop Nav Left - Hidden on Mobile */}
+          <nav className="hidden lg:flex items-center justify-start space-x-8 text-sm font-medium tracking-wide text-muted-foreground">
             <Link href="/shop" className="hover:text-primary transition-colors uppercase">Shop</Link>
             <Link href="/shop" className="hover:text-primary transition-colors uppercase">Oysters</Link>
             <Link href="/blog" className="hover:text-primary transition-colors uppercase">Blog</Link>
           </nav>
 
-          {/* Logo */}
-          <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 group">
-            <div className="flex flex-col items-center cursor-pointer">
-              <span className="font-serif text-3xl font-bold tracking-tighter text-primary group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
-                GOOSE POINT
-              </span>
-              <span className="text-[0.6rem] uppercase tracking-[0.4em] text-muted-foreground">Oysters</span>
-            </div>
-          </Link>
-
-          {/* Desktop Nav Right */}
-          <div className="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide text-muted-foreground ml-auto lg:ml-0">
-            <Link href="/recipes" className="hover:text-primary transition-colors uppercase">Recipes</Link>
-            <Link href="/wholesale" className="hover:text-primary transition-colors uppercase">Wholesale</Link>
+          {/* Logo - Always Centered */}
+          <div className="flex justify-center">
+            <Link href="/" className="group">
+              <div className="flex flex-col items-center cursor-pointer">
+                <span className="font-serif text-2xl md:text-3xl font-bold tracking-tighter text-primary group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
+                  GOOSE POINT
+                </span>
+                <span className="text-[0.5rem] md:text-[0.6rem] uppercase tracking-[0.4em] text-muted-foreground">Oysters</span>
+              </div>
+            </Link>
           </div>
 
-          {/* Cart */}
-          <div className="flex items-center space-x-4">
+          {/* Desktop Nav Right - Hidden on Mobile */}
+          <div className="hidden lg:flex items-center justify-end space-x-8 text-sm font-medium tracking-wide text-muted-foreground">
+            <Link href="/recipes" className="hover:text-primary transition-colors uppercase">Recipes</Link>
+            <Link href="/wholesale" className="hover:text-primary transition-colors uppercase">Wholesale</Link>
+            
+            {/* Cart in Desktop Nav */}
+            <div className="flex items-center pl-4 border-l border-border/50">
+              <Button variant="ghost" size="icon" className="relative hover:bg-transparent hover:text-accent">
+                <ShoppingCart className="h-5 w-5" />
+                <span className="absolute top-1 right-1 h-2 w-2 bg-accent rounded-full"></span>
+              </Button>
+            </div>
+          </div>
+
+          {/* Cart - Visible on Mobile Only (in right column) */}
+          <div className="lg:hidden flex justify-end">
             <Button variant="ghost" size="icon" className="relative hover:bg-transparent hover:text-accent">
               <ShoppingCart className="h-5 w-5" />
               <span className="absolute top-1 right-1 h-2 w-2 bg-accent rounded-full"></span>
