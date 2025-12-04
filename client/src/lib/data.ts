@@ -179,5 +179,89 @@ export const recipes = [
       "Transfer to a serving bowl and chill for at least 30 minutes to let flavors meld.",
       "Garnish with chopped green onions and serve with your favorite crackers."
     ]
+  },
+  {
+    id: "fried-oyster-tacos",
+    title: "Fried Oyster Tacos",
+    image: "https://goosepoint.com/wp-content/uploads/2024/05/Oyster-Tacos-768x655-1.jpg",
+    time: "30 min",
+    servings: "3-4",
+    difficulty: "Medium",
+    description: "A twist on your regular tacos, featuring crispy fried oysters and fresh pico de gallo.",
+    ingredients: [
+      "16oz Extra Small Goose Point Oysters",
+      "Goose Point Special Oyster Breading (or panko)",
+      "Corn Tortillas",
+      "5 Roma Tomatoes, Diced",
+      "1 Small Yellow Onion, Minced",
+      "1 Bunch Cilantro, Chopped",
+      "2 Jalapeno Peppers, Minced",
+      "1 Lime, Juiced",
+      "Shredded Cabbage & Carrots",
+      "1/2 Cup Mayo & 1/4 Cup Milk (for slaw dressing)"
+    ],
+    instructions: [
+      "Mix tomatoes, onions, cilantro, jalapeno, lime, salt, and pepper for Pico De Gallo. Chill.",
+      "Mix cabbage, carrots, mayo, milk, and salt for Cole Slaw. Chill.",
+      "Drain oysters and coat in breading.",
+      "Pan fry oysters in oil over med-high heat for 3-4 mins until golden brown.",
+      "Warm tortillas in a dry skillet.",
+      "Assemble tacos with slaw, pico de gallo, and two fried oysters each."
+    ]
+  },
+  {
+    id: "oyster-stuffing",
+    title: "Classic Oyster Stuffing",
+    image: "https://goosepoint.com/wp-content/uploads/2016/07/shucked-fried-home.jpg",
+    time: "60 min",
+    servings: "8-10",
+    difficulty: "Medium",
+    description: "A savory Thanksgiving classic that brings the ocean to your holiday table.",
+    ingredients: [
+      "1 jar (10oz) Shucked Oysters, drained (reserve liquor)",
+      "6 cups Stale Bread Cubes",
+      "1/2 cup Butter",
+      "1 Onion, chopped",
+      "2 stalks Celery, chopped",
+      "1 tsp Sage",
+      "1 tsp Thyme",
+      "Salt and Pepper to taste",
+      "Chicken Broth (as needed)"
+    ],
+    instructions: [
+      "Preheat oven to 350°F (175°C).",
+      "In a large skillet, sauté onion and celery in butter until soft.",
+      "Add herbs, salt, and pepper.",
+      "In a large bowl, toss bread cubes with the sautéed vegetables.",
+      "Gently fold in oysters.",
+      "Moisten with reserved oyster liquor and chicken broth until damp but not soggy.",
+      "Transfer to a baking dish and bake for 30-45 minutes until top is golden and crispy."
+    ]
+  },
+  {
+    id: "scalloped-oysters",
+    title: "Scalloped Oysters",
+    image: "https://goosepoint.com/wp-content/uploads/2016/07/hell-oysters-bag.jpg",
+    time: "45 min",
+    servings: "6",
+    difficulty: "Easy",
+    description: "A comforting, creamy casserole topped with buttery cracker crumbs.",
+    ingredients: [
+      "2 pints Fresh Oysters, drained",
+      "2 cups Crushed Saltine Crackers",
+      "1/2 cup Butter, melted",
+      "1 cup Heavy Cream",
+      "1/2 tsp Worcestershire Sauce",
+      "Salt and Pepper to taste",
+      "Paprika for garnish"
+    ],
+    instructions: [
+      "Preheat oven to 375°F (190°C). Grease a baking dish.",
+      "Mix cracker crumbs with melted butter.",
+      "Layer 1/3 of crumbs in the dish, then half the oysters. Repeat, ending with crumbs on top.",
+      "Whisk cream, Worcestershire sauce, salt, and pepper. Pour evenly over the dish.",
+      "Sprinkle with paprika.",
+      "Bake for 30 minutes until bubbly and browned."
+    ]
   }
 ];
