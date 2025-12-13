@@ -8,7 +8,7 @@ export const products = [
     description: "Fresh oysters from the pristine waters of Willapa Bay delivered from our farm to your door. We sell Goose Point Oysters live in the shell. If you’re planning on eating them raw, extra small and small oysters in the shell are the way to go. If you’re barbecuing or cooking in-shell try our small thru medium in shell oysters.",
     fullDescription: "Fresh oysters from the pristine waters of Willapa Bay delivered from our farm to your door. We sell Goose Point Oysters live in the shell, or as preshucked BlueSeals™. If you’re planning on eating them raw, extra small and small oysters in the shell or BlueSeals™ are the way to go. If you’re barbecuing or cooking in-shell try our small thru medium in shell oysters. Serve them on the half shell or on the barbecue. Either way they’ll be a huge hit. Our live shell-stock oysters are available in extra small, small, medium and large.",
     images: [
-      "https://goosepoint.com/wp-content/uploads/2016/07/hell-oysters-bag.jpg",
+      "/assets/images/new/oysters-lemon-knife.jpg",
       "https://goosepoint.com/wp-content/uploads/2016/07/hp-oysters-open.jpg"
     ],
     category: "Fresh Oysters",
@@ -40,9 +40,9 @@ export const products = [
     description: "Goose Point Oyster Shooters are packed under our HACCP food safety program, fresh with one of our extra small fresh Willapa Bay oyster meats using our zesty signature cocktail sauce.",
     fullDescription: "Go Ahead, Take a Shot! At Goose Point we don’t stop at live in-shell, BlueSeals™’ or shucked oysters. We also offer specialty consumer oyster products such as our popular Oyster Shooters. Goose Point Oyster Shooters are packed under our HACCP food safety program, fresh with one of our extra small fresh Willapa Bay oyster meats using our zesty signature cocktail sauce and presented in a traditional shot glass.",
     images: [
-      "https://goosepoint.com/wp-content/uploads/2016/07/shooter-commercial-served-several.jpg",
-      "https://goosepoint.com/wp-content/uploads/2016/07/shooter-lid-off.jpg",
-      "https://goosepoint.com/wp-content/uploads/2016/07/shooter-6-1.jpg",
+      "/assets/images/new/shooters-closeup.jpg",
+      "/assets/images/new/shooters-combo.jpg",
+      "/assets/images/new/shooters-glasses.jpg",
       "https://goosepoint.com/wp-content/uploads/2016/07/shooter-lid-on.jpg"
     ],
     category: "Apparel & Gifts",
@@ -203,7 +203,7 @@ export const recipes = [
   {
     id: "classic-oyster-shooters",
     title: "Classic Oyster Shooters",
-    image: "https://goosepoint.com/wp-content/uploads/2016/07/shooter-commercial-served-several.jpg",
+    image: "/assets/images/new/shooters-closeup.jpg",
     time: "10 min",
     servings: "4",
     difficulty: "Easy",
@@ -385,7 +385,7 @@ export const blogPosts = [
     It's a story of tradition, innovation, and love for the water. We hope it gives you a deeper appreciation for the shellfish on your plate.`,
     date: "September 5, 2018",
     author: "Social Media",
-    image: "https://goosepoint.com/wp-content/uploads/2013/01/three-generations.jpg",
+    image: "/assets/images/new/family-mudflats.jpg",
     category: "Family Farm"
   },
   {

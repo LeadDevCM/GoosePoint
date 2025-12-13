@@ -4,9 +4,9 @@ import { ArrowRight, Star } from "lucide-react";
 
 // Using real images from Goose Point website, attempting to use full resolution by removing dimension suffixes
 const heroImage = "https://goosepoint.com/wp-content/themes/goosepoint/img/clam-bake.png"; 
-const oysterImage = "https://goosepoint.com/wp-content/uploads/2016/07/hell-oysters-bag.jpg";
+const oysterImage = "/assets/images/new/oysters-lemon-knife.jpg";
 const shuckedImage = "https://goosepoint.com/wp-content/uploads/2016/07/High-Pressure.jpg";
-const shootersImage = "https://goosepoint.com/wp-content/uploads/2016/07/shooter-commercial-served-several.jpg";
+const shootersImage = "/assets/images/new/shooters-closeup.jpg";
 const smokedImage = "https://goosepoint.com/wp-content/uploads/2016/07/smoked_oysters-1.jpg";
 const knifeImage = "https://goosepoint.com/wp-content/uploads/2024/08/logo-knife-cutting-board.jpg";
 const dinnerBundleImage = "https://goosepoint.com/wp-content/uploads/2020/05/dinnerbundle-scaled.jpg";
@@ -136,8 +136,8 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[700px]">
           <div className="relative h-[500px] lg:h-auto order-2 lg:order-1 bg-gray-100">
              <img 
-              src="https://goosepoint.com/wp-content/themes/goosepoint/img/blue-seal-oysters.png" 
-              alt="Blue Seal Oysters" 
+              src="/assets/images/new/family-mudflats.jpg" 
+              alt="The Nisbet Family on the mudflats" 
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
           </div>

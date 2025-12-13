@@ -8,7 +8,7 @@ export default function Story() {
       {/* Hero Section */}
       <div className="relative h-[70vh] bg-gray-900 overflow-hidden">
         <img 
-          src="/assets/images/story/three-generations.jpg" 
+          src="/assets/images/new/family-hero.jpg" 
           alt="Nisbet family three generations" 
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         />
@@ -60,8 +60,8 @@ export default function Story() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center md:flex-row-reverse">
             <div className="order-2 md:order-1 relative aspect-video bg-gray-100 overflow-hidden rounded-sm shadow-xl">
               <img 
-                src="/assets/images/story/kathleen-working.jpg" 
-                alt="Kathleen Nisbet Moncy working" 
+                src="/assets/images/new/women-farmers.jpg" 
+                alt="Kathleen Nisbet Moncy and team" 
                 className="w-full h-full object-cover"
               />
             </div>
