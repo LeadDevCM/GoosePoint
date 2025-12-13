@@ -8,7 +8,7 @@ export default function Story() {
       {/* Hero Section */}
       <div className="relative h-[70vh] bg-gray-900 overflow-hidden">
         <img 
-          src="https://goosepoint.com/wp-content/uploads/2013/01/three-generations.jpg" 
+          src="/assets/images/story/three-generations.jpg" 
           alt="Nisbet family three generations" 
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         />
@@ -45,8 +45,8 @@ export default function Story() {
             </div>
             <div className="relative aspect-[4/5] md:aspect-square bg-gray-100 overflow-hidden rounded-sm">
               <img 
-                src="https://goosepoint.com/wp-content/uploads/2016/07/hp-oysters-open.jpg" 
-                alt="Fresh oysters" 
+                src="/assets/images/story/about-1.png" 
+                alt="Two Generations of Oyster Farmers" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -60,7 +60,7 @@ export default function Story() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center md:flex-row-reverse">
             <div className="order-2 md:order-1 relative aspect-video bg-gray-100 overflow-hidden rounded-sm shadow-xl">
               <img 
-                src="https://goosepoint.com/wp-content/uploads/2020/06/202OA0830.jpg" 
+                src="/assets/images/story/kathleen-working.jpg" 
                 alt="Kathleen Nisbet Moncy working" 
                 className="w-full h-full object-cover"
               />
@@ -145,7 +145,7 @@ export default function Story() {
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gray-900">
           <img 
-            src="https://goosepoint.com/wp-content/uploads/2016/07/High-Pressure.jpg" 
+            src="/assets/images/story/high-pressure.jpg" 
             alt="Oyster processing" 
             className="w-full h-full object-cover opacity-40"
           />
