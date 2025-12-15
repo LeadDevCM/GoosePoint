@@ -405,35 +405,40 @@ const blogPostsData = [
 ];
 
 export async function seedDatabase() {
-  console.log("Checking if database needs seeding...");
-  
-  // Check if products table is empty
-  const existingProducts = await db.select().from(products).limit(1);
-  
-  if (existingProducts.length > 0) {
-    console.log("Database already has data, skipping seed.");
-    return;
+  try {
+    console.log("Checking if database needs seeding...");
+    
+    // Check if products table is empty
+    const existingProducts = await db.select().from(products).limit(1);
+    
+    if (existingProducts.length > 0) {
+      console.log("Database already has data, skipping seed.");
+      return;
+    }
+    
+    console.log("Seeding database...");
+    
+    // Insert products
+    for (const product of productsData) {
+      await db.insert(products).values(product).onConflictDoNothing();
+    }
+    console.log(`Inserted ${productsData.length} products`);
+    
+    // Insert recipes
+    for (const recipe of recipesData) {
+      await db.insert(recipes).values(recipe).onConflictDoNothing();
+    }
+    console.log(`Inserted ${recipesData.length} recipes`);
+    
+    // Insert blog posts
+    for (const post of blogPostsData) {
+      await db.insert(blogPosts).values(post).onConflictDoNothing();
+    }
+    console.log(`Inserted ${blogPostsData.length} blog posts`);
+    
+    console.log("Seeding complete!");
+  } catch (error) {
+    console.error("Error during database seeding:", error);
+    // Don't throw - allow app to continue even if seeding fails
   }
-  
-  console.log("Seeding database...");
-  
-  // Insert products
-  for (const product of productsData) {
-    await db.insert(products).values(product).onConflictDoNothing();
-  }
-  console.log(`Inserted ${productsData.length} products`);
-  
-  // Insert recipes
-  for (const recipe of recipesData) {
-    await db.insert(recipes).values(recipe).onConflictDoNothing();
-  }
-  console.log(`Inserted ${recipesData.length} recipes`);
-  
-  // Insert blog posts
-  for (const post of blogPostsData) {
-    await db.insert(blogPosts).values(post).onConflictDoNothing();
-  }
-  console.log(`Inserted ${blogPostsData.length} blog posts`);
-  
-  console.log("Seeding complete!");
 }
