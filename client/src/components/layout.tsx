@@ -87,19 +87,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
             
             {/* Cart in Desktop Nav */}
             <div className="flex items-center pl-4 border-l border-border/50">
-              <Button variant="ghost" size="icon" className="relative hover:bg-transparent hover:text-accent">
-                <ShoppingCart className="h-5 w-5" />
-                <span className="absolute top-1 right-1 h-2 w-2 bg-accent rounded-full"></span>
-              </Button>
+              <Link href="/cart">
+                <Button variant="ghost" size="icon" className="relative hover:bg-transparent hover:text-accent">
+                  <ShoppingCart className="h-5 w-5" />
+                  <span className="absolute top-1 right-1 h-2 w-2 bg-accent rounded-full"></span>
+                </Button>
+              </Link>
             </div>
           </div>
 
           {/* Cart - Visible on Mobile Only (in right column) */}
           <div className="lg:hidden flex justify-end">
-            <Button variant="ghost" size="icon" className="relative hover:bg-transparent hover:text-accent">
-              <ShoppingCart className="h-5 w-5" />
-              <span className="absolute top-1 right-1 h-2 w-2 bg-accent rounded-full"></span>
-            </Button>
+            <Link href="/cart">
+              <Button variant="ghost" size="icon" className="relative hover:bg-transparent hover:text-accent">
+                <ShoppingCart className="h-5 w-5" />
+                <span className="absolute top-1 right-1 h-2 w-2 bg-accent rounded-full"></span>
+              </Button>
+            </Link>
           </div>
         </div>
       </header>

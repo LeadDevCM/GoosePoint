@@ -12,6 +12,7 @@ import RecipeDetail from "@/pages/recipe-detail";
 import Wholesale from "@/pages/wholesale";
 import Blog from "@/pages/blog";
 import BlogDetail from "@/pages/blog-detail";
+import Cart from "@/pages/cart";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/shop" component={Shop} />
         <Route path="/product/:id" component={ProductDetail} />
+        <Route path="/cart" component={Cart} />
         <Route path="/story" component={Story} />
         <Route path="/recipes" component={Recipes} />
         <Route path="/recipes/:id" component={RecipeDetail} />

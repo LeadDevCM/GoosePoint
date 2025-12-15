@@ -153,6 +153,18 @@ export default function ProductDetail() {
             </div>
           </div>
         </div>
+
+        {/* Warning Text */}
+        <div className="mt-16 pt-8 border-t border-gray-100 text-xs text-muted-foreground space-y-4 max-w-4xl">
+          <p>
+            Consuming raw or undercooked food increases your risk of foodborne illness.
+            Raw food, especially raw shellfish, is of course inherently more dangerous than cooked food. So, buy from a reputable location (or directly from the farm!), don't eat raw shellfish if you're pregnant or immune-compromised, and if you're unsure if the oysters are safe to eat raw either cook them thoroughly (145 degrees for 15 seconds) or toss them out.
+          </p>
+          <p>
+            <span className="font-bold text-red-700/80">WARNING:</span> Consuming shellfish products can expose you to chemicals including cadmium, which are known to the State of California to cause cancer and birth defects or other reproductive harm.
+            For more information go to <a href="https://www.P65warnings.ca.gov/food" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">www.P65warnings.ca.gov/food</a>
+          </p>
+        </div>
       </div>
     </div>
   );
