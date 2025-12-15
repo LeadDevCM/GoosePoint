@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { SlidersHorizontal } from "lucide-react";
+import { products } from "@/lib/data";
 import { Link } from "wouter";
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import type { Product } from "@shared/schema";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -17,10 +16,6 @@ const ITEMS_PER_PAGE = 6;
 export default function Shop() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
-  const { data: products = [], isLoading } = useQuery<Product[]>({
-    queryKey: ['/api/products'],
-  });
 
   // Filter products first
   const filteredProducts = selectedCategory 
@@ -152,11 +147,7 @@ export default function Shop() {
         {/* Product Grid */}
         <div className="flex-1">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-            {isLoading ? (
-              <div className="col-span-full text-center py-12 text-muted-foreground">
-                Loading products...
-              </div>
-            ) : currentProducts.length > 0 ? (
+            {currentProducts.length > 0 ? (
               currentProducts.map((product) => (
                 <Link key={product.id} href={`/product/${product.id}`}>
                   <motion.div 

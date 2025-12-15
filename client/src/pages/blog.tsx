@@ -1,14 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Calendar, User } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
-import type { BlogPost } from "@shared/schema";
+import { blogPosts } from "@/lib/data";
 
 export default function Blog() {
-  const { data: blogPosts = [], isLoading } = useQuery<BlogPost[]>({
-    queryKey: ['/api/blog'],
-  });
-
   return (
     <div className="min-h-screen bg-background pb-24">
       {/* Hero */}

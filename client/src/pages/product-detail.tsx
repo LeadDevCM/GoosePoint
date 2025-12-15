@@ -1,24 +1,19 @@
 import { useRoute, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Star, Minus, Plus, Share2, Truck, ShieldCheck } from "lucide-react";
+import { products } from "@/lib/data";
 import { useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import NotFound from "./not-found";
-import { useQuery } from "@tanstack/react-query";
-import type { Product } from "@shared/schema";
 
 export default function ProductDetail() {
   const [match, params] = useRoute("/product/:id");
   const [quantity, setQuantity] = useState(1);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-  const { data: product, isLoading } = useQuery<Product>({
-    queryKey: [`/api/products/${params?.id}`],
-    enabled: !!params?.id,
-  });
-
   if (!match) return <NotFound />;
-  if (isLoading) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+
+  const product = products.find((p) => p.id === params.id);
   if (!product) return <NotFound />;
 
   // Set default option if exists and not selected
