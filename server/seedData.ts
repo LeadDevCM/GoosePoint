@@ -1,4 +1,4 @@
-import { db } from "./db";
+import { db, pool } from "./db";
 import { products, recipes, blogPosts } from "@shared/schema";
 
 const productsData = [
@@ -404,8 +404,70 @@ const blogPostsData = [
   }
 ];
 
+async function ensureTablesExist() {
+  console.log("Ensuring database tables exist...");
+  
+  const createProductsTable = `
+    CREATE TABLE IF NOT EXISTS products (
+      id VARCHAR PRIMARY KEY,
+      title TEXT NOT NULL,
+      price TEXT NOT NULL,
+      description TEXT NOT NULL,
+      full_description TEXT NOT NULL,
+      images JSONB NOT NULL,
+      category TEXT NOT NULL,
+      options JSONB NOT NULL
+    );
+  `;
+  
+  const createRecipesTable = `
+    CREATE TABLE IF NOT EXISTS recipes (
+      id VARCHAR PRIMARY KEY,
+      title TEXT NOT NULL,
+      image TEXT NOT NULL,
+      time TEXT NOT NULL,
+      servings TEXT NOT NULL,
+      difficulty TEXT NOT NULL,
+      description TEXT NOT NULL,
+      ingredients JSONB NOT NULL,
+      instructions JSONB NOT NULL
+    );
+  `;
+  
+  const createBlogPostsTable = `
+    CREATE TABLE IF NOT EXISTS blog_posts (
+      id VARCHAR PRIMARY KEY,
+      title TEXT NOT NULL,
+      excerpt TEXT NOT NULL,
+      full_content TEXT NOT NULL,
+      date TEXT NOT NULL,
+      author TEXT NOT NULL,
+      image TEXT NOT NULL,
+      category TEXT NOT NULL
+    );
+  `;
+  
+  const createNewsletterTable = `
+    CREATE TABLE IF NOT EXISTS newsletter_subscribers (
+      id VARCHAR PRIMARY KEY DEFAULT gen_random_uuid()::text,
+      email TEXT NOT NULL UNIQUE,
+      subscribed_at TEXT NOT NULL DEFAULT NOW()::text
+    );
+  `;
+  
+  await pool.query(createProductsTable);
+  await pool.query(createRecipesTable);
+  await pool.query(createBlogPostsTable);
+  await pool.query(createNewsletterTable);
+  
+  console.log("Database tables ready.");
+}
+
 export async function seedDatabase() {
   try {
+    // First ensure tables exist
+    await ensureTablesExist();
+    
     console.log("Checking if database needs seeding...");
     
     // Check if products table is empty
