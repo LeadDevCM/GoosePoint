@@ -10,15 +10,15 @@ export default function Story() {
         <img 
           src="/assets/images/new/family-hero.jpg" 
           alt="Nisbet family three generations" 
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white space-y-6">
-          <span className="uppercase tracking-[0.3em] text-sm font-medium text-accent">Est. 1975</span>
-          <h1 className="font-serif text-5xl md:text-7xl leading-tight max-w-4xl">
+          <span className="uppercase tracking-[0.3em] text-sm font-medium text-accent drop-shadow-md">Est. 1975</span>
+          <h1 className="font-serif text-5xl md:text-7xl leading-tight max-w-4xl drop-shadow-lg">
             A Legacy Born on<br/>Willapa Bay
           </h1>
-          <p className="font-sans text-lg md:text-xl text-gray-200 max-w-2xl font-light leading-relaxed">
+          <p className="font-sans text-lg md:text-xl text-white max-w-2xl font-light leading-relaxed drop-shadow-md">
             From 10 acres and a pickup truck to a leader in sustainable aquaculture. This is the story of the Nisbet family.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function Story() {
             </div>
             <div className="relative aspect-[4/5] md:aspect-square bg-gray-100 overflow-hidden rounded-sm">
               <img 
-                src="/assets/images/story/about-1.png" 
+                src="/assets/images/new/family-mudflats-2.jpg" 
                 alt="Two Generations of Oyster Farmers" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />

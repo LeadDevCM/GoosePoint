@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 
@@ -56,9 +57,11 @@ export default function Home() {
               Sustainably farmed shellfish delivered fresh from our pristine waters to your table.
             </p>
             <div className="pt-8">
-              <Button size="lg" className="bg-white text-primary hover:bg-accent hover:text-white border-none rounded-none px-10 py-6 text-sm tracking-widest uppercase font-bold transition-all duration-300 shadow-xl">
-                Shop The Harvest
-              </Button>
+              <Link href="/shop">
+                <Button size="lg" className="bg-white text-primary hover:bg-accent hover:text-white border-none rounded-none px-10 py-6 text-sm tracking-widest uppercase font-bold transition-all duration-300 shadow-xl">
+                  Shop The Harvest
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -81,6 +84,7 @@ export default function Home() {
           >
             {/* Product 1 */}
             <ProductCard 
+              id="shellstock-oysters"
               image={oysterImage}
               title="Shellstock Oysters"
               price="$14.00 – $18.00"
@@ -88,6 +92,7 @@ export default function Home() {
             />
             {/* Product 2 */}
             <ProductCard 
+              id="pre-shucked-blueseal"
               image={shuckedImage}
               title="Pre-Shucked BlueSeal™"
               price="$18.00 – $20.00"
@@ -95,6 +100,7 @@ export default function Home() {
             />
              {/* Product 3 */}
              <ProductCard 
+              id="oyster-shooters"
               image={shootersImage}
               title="Oyster Shooters"
               price="$24.00 – $96.00"
@@ -102,6 +108,7 @@ export default function Home() {
             />
             {/* Product 4 */}
             <ProductCard 
+              id="smoked-oysters"
               image={smokedImage}
               title="Smoked Oysters"
               price="$14.00 – $41.00"
@@ -109,6 +116,7 @@ export default function Home() {
             />
             {/* Product 5 */}
             <ProductCard 
+              id="bbq-dinner-bundle"
               image={dinnerBundleImage}
               title="BBQ Dinner Bundle"
               price="$60.00"
@@ -116,6 +124,7 @@ export default function Home() {
             />
             {/* Product 6 */}
             <ProductCard 
+              id="shucking-knife"
               image={knifeImage}
               title="Shucking Knife"
               price="$12.50"
@@ -124,9 +133,11 @@ export default function Home() {
           </motion.div>
           
           <div className="mt-16 text-center">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded-none px-8 py-6 text-xs uppercase tracking-widest font-bold">
-              View All Products
-            </Button>
+            <Link href="/shop">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded-none px-8 py-6 text-xs uppercase tracking-widest font-bold">
+                View All Products
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -153,9 +164,11 @@ export default function Home() {
               <p className="text-white/80 leading-relaxed font-light text-lg">
                 Our farming methods actually improve water quality, creating a thriving ecosystem. We produce healthy, plump oysters year-round so you can enjoy the distinctive Pacific flavor in every order.
               </p>
-              <Button variant="link" className="text-white pl-0 hover:text-accent uppercase tracking-widest text-xs font-bold mt-4 flex items-center gap-2">
-                Read Our Story <ArrowRight className="h-4 w-4" />
-              </Button>
+              <Link href="/story">
+                <Button variant="link" className="text-white pl-0 hover:text-accent uppercase tracking-widest text-xs font-bold mt-4 flex items-center gap-2">
+                  Read Our Story <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -170,12 +183,16 @@ export default function Home() {
             We offer wholesale seafood pricing on all of our fresh shellfish & frozen seafood meals. You can now order wholesale seafood online, direct from Goose Point.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8 max-w-lg mx-auto">
-            <Button className="bg-primary text-white hover:bg-primary/90 rounded-none py-6 text-xs uppercase tracking-widest font-bold">
-              Wholesale Account
-            </Button>
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary/5 rounded-none py-6 text-xs uppercase tracking-widest font-bold">
-              Farm Store
-            </Button>
+            <Link href="/wholesale">
+              <Button className="w-full bg-primary text-white hover:bg-primary/90 rounded-none py-6 text-xs uppercase tracking-widest font-bold">
+                Wholesale Account
+              </Button>
+            </Link>
+            <Link href="/wholesale">
+              <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/5 rounded-none py-6 text-xs uppercase tracking-widest font-bold">
+                Farm Store
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -183,26 +200,28 @@ export default function Home() {
   );
 }
 
-function ProductCard({ image, title, price, description }: { image: string, title: string, price: string, description: string }) {
+function ProductCard({ id, image, title, price, description }: { id: string, image: string, title: string, price: string, description: string }) {
   return (
-    <motion.div variants={fadeInUp} className="group cursor-pointer">
-      <div className="relative aspect-square overflow-hidden bg-white border border-gray-100 mb-6">
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm border-t border-gray-100">
-          <Button className="w-full bg-primary text-white hover:bg-accent hover:text-white border-none shadow-none uppercase tracking-widest text-xs font-bold py-4">
-            Add to Cart
-          </Button>
+    <Link href={`/product/${id}`}>
+      <motion.div variants={fadeInUp} className="group cursor-pointer">
+        <div className="relative aspect-square overflow-hidden bg-white border border-gray-100 mb-6">
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm border-t border-gray-100">
+            <Button className="w-full bg-primary text-white hover:bg-accent hover:text-white border-none shadow-none uppercase tracking-widest text-xs font-bold py-4">
+              Add to Cart
+            </Button>
+          </div>
         </div>
-      </div>
-      <div className="text-center space-y-2">
-        <h3 className="font-serif text-xl text-primary">{title}</h3>
-        <p className="font-sans text-accent font-medium tracking-wide">{price}</p>
-        <p className="text-muted-foreground text-sm leading-relaxed px-4 line-clamp-2">{description}</p>
-      </div>
-    </motion.div>
+        <div className="text-center space-y-2">
+          <h3 className="font-serif text-xl text-primary">{title}</h3>
+          <p className="font-sans text-accent font-medium tracking-wide">{price}</p>
+          <p className="text-muted-foreground text-sm leading-relaxed px-4 line-clamp-2">{description}</p>
+        </div>
+      </motion.div>
+    </Link>
   );
 }
