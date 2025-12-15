@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 
 // Using real images from Goose Point website, attempting to use full resolution by removing dimension suffixes
-const heroImage = "https://goosepoint.com/wp-content/themes/goosepoint/img/clam-bake.png"; 
+const heroImage = "/assets/images/new/shooters-closeup.jpg"; 
 const oysterImage = "/assets/images/new/oysters-lemon-knife.jpg";
 const shuckedImage = "https://goosepoint.com/wp-content/uploads/2016/07/High-Pressure.jpg";
 const shootersImage = "/assets/images/new/shooters-closeup.jpg";
