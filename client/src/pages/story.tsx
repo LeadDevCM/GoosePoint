@@ -6,7 +6,7 @@ export default function Story() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="relative h-[70vh] bg-gray-900 overflow-hidden">
+      <div className="relative h-[80vh] bg-gray-900 overflow-hidden">
         <img 
           src="/assets/images/new/family-hero-crouched.jpg" 
           alt="Nisbet family three generations" 
