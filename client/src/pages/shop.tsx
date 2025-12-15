@@ -152,7 +152,11 @@ export default function Shop() {
         {/* Product Grid */}
         <div className="flex-1">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-            {currentProducts.length > 0 ? (
+            {isLoading ? (
+              <div className="col-span-full text-center py-12 text-muted-foreground">
+                Loading products...
+              </div>
+            ) : currentProducts.length > 0 ? (
               currentProducts.map((product) => (
                 <Link key={product.id} href={`/product/${product.id}`}>
                   <motion.div 
