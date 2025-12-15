@@ -74,7 +74,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <span className="font-serif text-2xl md:text-3xl font-bold tracking-tighter text-primary group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
                   GOOSE POINT
                 </span>
-                <span className="text-[0.5rem] md:text-[0.6rem] uppercase tracking-[0.4em] text-muted-foreground">Oysters</span>
+                <span className="text-[0.5rem] md:text-[0.6rem] uppercase tracking-[0.4em] text-muted-foreground">FAMILY FARM & OYSTERY</span>
               </div>
             </Link>
           </div>
