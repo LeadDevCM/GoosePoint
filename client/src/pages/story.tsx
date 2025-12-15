@@ -8,7 +8,7 @@ export default function Story() {
       {/* Hero Section */}
       <div className="relative h-[70vh] bg-gray-900 overflow-hidden">
         <img 
-          src="/assets/images/new/family-hero.jpg" 
+          src="/assets/images/new/family-hero-crouched.jpg" 
           alt="Nisbet family three generations" 
           className="absolute inset-0 w-full h-full object-cover opacity-80"
         />
