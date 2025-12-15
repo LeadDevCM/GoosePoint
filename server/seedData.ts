@@ -405,6 +405,11 @@ const blogPostsData = [
 ];
 
 async function ensureTablesExist() {
+  if (!pool) {
+    console.log("No database connection, skipping table creation.");
+    return false;
+  }
+  
   console.log("Ensuring database tables exist...");
   
   const createProductsTable = `
@@ -461,12 +466,17 @@ async function ensureTablesExist() {
   await pool.query(createNewsletterTable);
   
   console.log("Database tables ready.");
+  return true;
 }
 
 export async function seedDatabase() {
   try {
     // First ensure tables exist
-    await ensureTablesExist();
+    const tablesReady = await ensureTablesExist();
+    if (!tablesReady || !db) {
+      console.log("Database not available, skipping seeding.");
+      return;
+    }
     
     console.log("Checking if database needs seeding...");
     

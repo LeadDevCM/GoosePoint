@@ -38,15 +38,18 @@ export interface IStorage {
 export class DatabaseStorage implements IStorage {
   // Products
   async getAllProducts(): Promise<Product[]> {
+    if (!db) return [];
     return await db.select().from(products);
   }
 
   async getProduct(id: string): Promise<Product | undefined> {
+    if (!db) return undefined;
     const [product] = await db.select().from(products).where(eq(products.id, id));
     return product || undefined;
   }
 
   async createProduct(insertProduct: InsertProduct): Promise<Product> {
+    if (!db) throw new Error("Database not available");
     const [product] = await db
       .insert(products)
       .values(insertProduct)
@@ -56,15 +59,18 @@ export class DatabaseStorage implements IStorage {
 
   // Recipes
   async getAllRecipes(): Promise<Recipe[]> {
+    if (!db) return [];
     return await db.select().from(recipes);
   }
 
   async getRecipe(id: string): Promise<Recipe | undefined> {
+    if (!db) return undefined;
     const [recipe] = await db.select().from(recipes).where(eq(recipes.id, id));
     return recipe || undefined;
   }
 
   async createRecipe(insertRecipe: InsertRecipe): Promise<Recipe> {
+    if (!db) throw new Error("Database not available");
     const [recipe] = await db
       .insert(recipes)
       .values(insertRecipe)
@@ -74,15 +80,18 @@ export class DatabaseStorage implements IStorage {
 
   // Blog Posts
   async getAllBlogPosts(): Promise<BlogPost[]> {
+    if (!db) return [];
     return await db.select().from(blogPosts);
   }
 
   async getBlogPost(id: string): Promise<BlogPost | undefined> {
+    if (!db) return undefined;
     const [post] = await db.select().from(blogPosts).where(eq(blogPosts.id, id));
     return post || undefined;
   }
 
   async createBlogPost(insertPost: InsertBlogPost): Promise<BlogPost> {
+    if (!db) throw new Error("Database not available");
     const [post] = await db
       .insert(blogPosts)
       .values(insertPost)
@@ -92,6 +101,7 @@ export class DatabaseStorage implements IStorage {
 
   // Newsletter
   async subscribeNewsletter(email: string): Promise<NewsletterSubscriber> {
+    if (!db) throw new Error("Database not available");
     const [subscriber] = await db
       .insert(newsletterSubscribers)
       .values({ email })
