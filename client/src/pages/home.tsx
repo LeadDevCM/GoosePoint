@@ -147,7 +147,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[700px]">
           <div className="relative h-[500px] lg:h-auto order-2 lg:order-1 bg-gray-100">
              <img 
-              src="/assets/images/new/family-mudflats.jpg" 
+              src="/assets/images/new/family-hero.jpg" 
               alt="The Nisbet Family on the mudflats" 
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
