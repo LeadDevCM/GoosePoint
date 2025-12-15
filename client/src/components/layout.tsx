@@ -64,6 +64,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <nav className="hidden lg:flex items-center justify-start space-x-8 text-sm font-medium tracking-wide text-muted-foreground">
             <Link href="/shop" className="hover:text-primary transition-colors uppercase">Shop</Link>
             <Link href="/shop" className="hover:text-primary transition-colors uppercase">Oysters</Link>
+            <Link href="/story" className="hover:text-primary transition-colors uppercase">Our Story</Link>
             <Link href="/blog" className="hover:text-primary transition-colors uppercase">Blog</Link>
           </nav>
 
