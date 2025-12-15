@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import type { Product } from "@shared/schema";
 
 // Using real images from Goose Point website, attempting to use full resolution by removing dimension suffixes
 const heroImage = "/assets/images/new/shooters-closeup.jpg"; 
@@ -27,6 +29,21 @@ const stagger = {
 };
 
 export default function Home() {
+  const { data: products = [], isLoading } = useQuery<Product[]>({
+    queryKey: ['/api/products'],
+  });
+
+  const featuredProductIds = [
+    "shellstock-oysters",
+    "pre-shucked-blueseal",
+    "oyster-shooters",
+    "smoked-oysters",
+    "bbq-dinner-bundle",
+    "shucking-knife"
+  ];
+
+  const featuredProducts = products.filter(p => featuredProductIds.includes(p.id));
+
   return (
     <div className="flex flex-col gap-0">
       {/* Hero Section */}
@@ -82,54 +99,20 @@ export default function Home() {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
           >
-            {/* Product 1 */}
-            <ProductCard 
-              id="shellstock-oysters"
-              image={oysterImage}
-              title="Shellstock Oysters"
-              price="$14.00 – $18.00"
-              description="Fresh, in-shell oysters harvested daily. The pure taste of Willapa Bay."
-            />
-            {/* Product 2 */}
-            <ProductCard 
-              id="pre-shucked-blueseal"
-              image={shuckedImage}
-              title="Pre-Shucked BlueSeal™"
-              price="$18.00 – $20.00"
-              description="Convenient, plumb, and ready to use. Perfect for stews and frying."
-            />
-             {/* Product 3 */}
-             <ProductCard 
-              id="oyster-shooters"
-              image={shootersImage}
-              title="Oyster Shooters"
-              price="$24.00 – $96.00"
-              description="Our signature shooters. The perfect party starter."
-            />
-            {/* Product 4 */}
-            <ProductCard 
-              id="smoked-oysters"
-              image={smokedImage}
-              title="Smoked Oysters"
-              price="$14.00 – $41.00"
-              description="Rich, smoky flavor. A gourmet treat for any occasion."
-            />
-            {/* Product 5 */}
-            <ProductCard 
-              id="bbq-dinner-bundle"
-              image={dinnerBundleImage}
-              title="BBQ Dinner Bundle"
-              price="$60.00"
-              description="Everything you need for a perfect seafood feast."
-            />
-            {/* Product 6 */}
-            <ProductCard 
-              id="shucking-knife"
-              image={knifeImage}
-              title="Shucking Knife"
-              price="$12.50"
-              description="Professional grade tool for opening your oysters with ease."
-            />
+            {isLoading ? (
+              <div className="col-span-3 text-center py-12 text-muted-foreground">Loading products...</div>
+            ) : (
+              featuredProducts.map((product) => (
+                <ProductCard 
+                  key={product.id}
+                  id={product.id}
+                  image={product.images[0]}
+                  title={product.title}
+                  price={product.price}
+                  description={product.description}
+                />
+              ))
+            )}
           </motion.div>
           
           <div className="mt-16 text-center">

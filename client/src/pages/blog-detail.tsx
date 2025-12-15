@@ -1,15 +1,20 @@
 import { useRoute, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Calendar, User, ArrowLeft } from "lucide-react";
-import { blogPosts } from "@/lib/data";
 import NotFound from "./not-found";
+import { useQuery } from "@tanstack/react-query";
+import type { BlogPost } from "@shared/schema";
 
 export default function BlogDetail() {
   const [match, params] = useRoute("/blog/:id");
 
-  if (!match) return <NotFound />;
+  const { data: post, isLoading } = useQuery<BlogPost>({
+    queryKey: [`/api/blog/${params?.id}`],
+    enabled: !!params?.id,
+  });
 
-  const post = blogPosts.find((p) => p.id === params.id);
+  if (!match) return <NotFound />;
+  if (isLoading) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
   if (!post) return <NotFound />;
 
   return (

@@ -1,15 +1,20 @@
 import { useRoute, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Clock, Users, ChefHat, Printer } from "lucide-react";
-import { recipes } from "@/lib/data";
 import NotFound from "./not-found";
+import { useQuery } from "@tanstack/react-query";
+import type { Recipe } from "@shared/schema";
 
 export default function RecipeDetail() {
   const [match, params] = useRoute("/recipes/:id");
 
-  if (!match) return <NotFound />;
+  const { data: recipe, isLoading } = useQuery<Recipe>({
+    queryKey: [`/api/recipes/${params?.id}`],
+    enabled: !!params?.id,
+  });
 
-  const recipe = recipes.find((r) => r.id === params.id);
+  if (!match) return <NotFound />;
+  if (isLoading) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
   if (!recipe) return <NotFound />;
 
   return (

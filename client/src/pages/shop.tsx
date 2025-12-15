@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { SlidersHorizontal } from "lucide-react";
-import { products } from "@/lib/data";
 import { Link } from "wouter";
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import type { Product } from "@shared/schema";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -16,6 +17,10 @@ const ITEMS_PER_PAGE = 6;
 export default function Shop() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  const { data: products = [], isLoading } = useQuery<Product[]>({
+    queryKey: ['/api/products'],
+  });
 
   // Filter products first
   const filteredProducts = selectedCategory 

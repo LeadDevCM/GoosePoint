@@ -1,9 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Clock, Users, ChefHat } from "lucide-react";
-import { recipes } from "@/lib/data";
 import { Link } from "wouter";
+import { useQuery } from "@tanstack/react-query";
+import type { Recipe } from "@shared/schema";
 
 export default function Recipes() {
+  const { data: recipes = [], isLoading } = useQuery<Recipe[]>({
+    queryKey: ['/api/recipes'],
+  });
+
   return (
     <div className="min-h-screen bg-background pb-24">
        <div className="bg-secondary/30 py-16 md:py-24">
