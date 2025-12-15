@@ -65,7 +65,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/shop" className="hover:text-primary transition-colors uppercase">Shop</Link>
             <Link href="/shop" className="hover:text-primary transition-colors uppercase">Oysters</Link>
             <Link href="/story" className="hover:text-primary transition-colors uppercase">Our Story</Link>
-            <Link href="/blog" className="hover:text-primary transition-colors uppercase">Blog</Link>
           </nav>
 
           {/* Logo - Always Centered */}
@@ -82,6 +81,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Desktop Nav Right - Hidden on Mobile */}
           <div className="hidden lg:flex items-center justify-end space-x-8 text-sm font-medium tracking-wide text-muted-foreground">
+            <Link href="/blog" className="hover:text-primary transition-colors uppercase">Blog</Link>
             <Link href="/recipes" className="hover:text-primary transition-colors uppercase">Recipes</Link>
             <Link href="/wholesale" className="hover:text-primary transition-colors uppercase">Wholesale</Link>
             
