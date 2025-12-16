@@ -24,86 +24,80 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
 
-  /* Typography - Montserrat for headings (Gotham fallback), Trocchi for body */
   --font-sans: 'Montserrat', sans-serif;
-  --font-serif: 'Trocchi', 'Playfair Display', serif;
-
+  --font-serif: 'Playfair Display', serif;
+  
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
 }
 
 :root {
-  /* GoosePoint Oysters Brand Palette */
-
-  /* Azure Blue - Primary brand color for CTAs, links, accents */
-  --primary: 201 82% 40%; /* #127ebc */
+  /* Coastal Premium Palette */
+  /* Deep Navy Blue for Primary Actions/Headings */
+  --primary: 215 28% 17%; /* #1f2937 - approximated deep slate */
   --primary-foreground: 0 0% 100%;
 
-  /* Clean White Background */
+  /* Clean White/Off-White Backgrounds */
   --background: 0 0% 100%;
+  --foreground: 215 28% 17%;
 
-  /* Dark Gray Brown - Text, headers, wood grain accents */
-  --foreground: 32 10% 26%; /* #48423b */
-
-  /* Light Gray - Backgrounds, subtle sections */
-  --secondary: 0 0% 98%; /* #F9F9F9 */
-  --secondary-foreground: 32 10% 26%;
+  /* Warm Sand/Beige for Secondary/Accents */
+  --secondary: 40 20% 94%; /* #f5f3ef */
+  --secondary-foreground: 215 28% 17%;
 
   /* Muted tones for borders and secondary text */
-  --muted: 0 0% 98%; /* #F9F9F9 */
-  --muted-foreground: 32 10% 40%;
+  --muted: 210 20% 96%;
+  --muted-foreground: 215 16% 47%;
 
-  /* Gold/Yellowish Accent - PRESERVED from original design */
   --accent: 43 74% 49%; /* #d9a520 - Gold/Brass Accent */
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 32 8% 85%;
-  --input: 32 8% 85%;
-  --ring: 201 82% 40%; /* Azure Blue for focus rings */
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 215 28% 17%;
 
-  --radius: 0.25rem; /* Slightly rounded for warmth */
-
+  --radius: 0rem; /* Sharp edges for elegance, or slightly rounded. Let's go 0 for premium feel or very small */
+  
   --card: 0 0% 100%;
-  --card-foreground: 32 10% 26%;
-
+  --card-foreground: 215 28% 17%;
+  
   --popover: 0 0% 100%;
-  --popover-foreground: 32 10% 26%;
+  --popover-foreground: 215 28% 17%;
 }
 
 .dark {
-  /* Dark mode variant - deep coastal theme */
-  --background: 32 15% 12%;
+  /* Dark mode variant if needed - deep ocean theme */
+  --background: 215 28% 13%;
   --foreground: 0 0% 98%;
-
-  --card: 32 12% 15%;
+  
+  --card: 215 28% 15%;
   --card-foreground: 0 0% 98%;
-
-  --popover: 32 12% 15%;
+  
+  --popover: 215 28% 15%;
   --popover-foreground: 0 0% 98%;
-
-  --primary: 201 82% 50%; /* Lighter Azure for dark mode */
-  --primary-foreground: 0 0% 100%;
-
-  --secondary: 32 10% 20%;
+  
+  --primary: 0 0% 98%;
+  --primary-foreground: 215 28% 17%;
+  
+  --secondary: 215 20% 20%;
   --secondary-foreground: 0 0% 98%;
-
-  --muted: 32 10% 20%;
-  --muted-foreground: 32 10% 65%;
-
-  /* Gold accent preserved in dark mode */
+  
+  --muted: 215 20% 20%;
+  --muted-foreground: 215 20% 65%;
+  
   --accent: 43 74% 49%;
   --accent-foreground: 0 0% 100%;
-
+  
   --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 98%;
-
-  --border: 32 10% 25%;
-  --input: 32 10% 25%;
-  --ring: 201 82% 50%;
+  
+  --border: 215 20% 20%;
+  --input: 215 20% 20%;
+  --ring: 215 20% 65%;
 }
 
 @layer base {
@@ -111,19 +105,9 @@
     @apply border-border;
   }
   body {
-    /* Trocchi (serif) for body text - warm, readable */
-    @apply font-serif antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground;
   }
   h1, h2, h3, h4, h5, h6 {
-    /* Montserrat (sans-serif) for headings - clean, modern */
-    @apply font-sans font-medium tracking-normal;
-  }
-  /* Links default to Azure Blue */
-  a {
-    @apply text-primary hover:text-primary/80 transition-colors;
-  }
-  /* Ensure nav links in certain contexts don't get blue styling */
-  nav a, header a, footer a {
-    @apply text-inherit;
+    @apply font-serif;
   }
 }

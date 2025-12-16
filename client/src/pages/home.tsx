@@ -50,16 +50,16 @@ export default function Home() {
             <h2 className="font-sans text-sm md:text-base tracking-[0.3em] uppercase text-accent font-bold drop-shadow-md">
               Willapa Bay, Washington
             </h2>
-            <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl leading-tight drop-shadow-lg font-medium">
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight drop-shadow-lg">
               Always in <span className="italic text-accent text-shadow-lg">Season</span>
             </h1>
-            <p className="font-serif text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
+            <p className="font-sans text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
               Sustainably farmed shellfish delivered fresh from our pristine waters to your table.
             </p>
             <div className="pt-8">
               <Link href="/shop">
-                <Button size="lg" className="bg-white text-primary hover:bg-accent hover:text-white border-none rounded px-10 py-6 text-sm tracking-widest uppercase font-sans font-bold transition-all duration-300 shadow-xl">
-                  Farm Store
+                <Button size="lg" className="bg-white text-primary hover:bg-accent hover:text-white border-none rounded-none px-10 py-6 text-sm tracking-widest uppercase font-bold transition-all duration-300 shadow-xl">
+                  Shop The Harvest
                 </Button>
               </Link>
             </div>
@@ -72,7 +72,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16 space-y-4">
             <h3 className="font-sans text-xs font-bold uppercase tracking-widest text-muted-foreground">Fresh From The Bay</h3>
-            <h2 className="font-sans text-3xl md:text-4xl text-foreground font-medium">Our Selection</h2>
+            <h2 className="font-serif text-4xl md:text-5xl text-primary">Our Selection</h2>
           </div>
 
           <motion.div 
@@ -133,8 +133,8 @@ export default function Home() {
           </motion.div>
           
           <div className="mt-16 text-center">
-            <Link href="/shop/products">
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded px-8 py-6 text-xs uppercase tracking-widest font-sans font-bold">
+            <Link href="/shop">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded-none px-8 py-6 text-xs uppercase tracking-widest font-bold">
                 View All Products
               </Button>
             </Link>
@@ -142,30 +142,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Story Section - Dark Gray Brown for warmth */}
+      {/* Story Section */}
       <section className="py-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[700px]">
           <div className="relative h-[500px] lg:h-auto order-2 lg:order-1 bg-gray-100">
-             <img
-              src="/assets/images/new/family-hero.jpg"
-              alt="The Nisbet Family on the mudflats"
+             <img 
+              src="/assets/images/new/family-hero.jpg" 
+              alt="The Nisbet Family on the mudflats" 
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
           </div>
           <div className="flex flex-col justify-center p-12 lg:p-24 bg-primary text-white order-1 lg:order-2">
             <div className="space-y-8 max-w-lg">
               <div className="w-20 h-1 bg-accent"></div>
-              <h2 className="font-sans text-3xl md:text-4xl leading-tight font-medium">
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight">
                 Stewards of the <span className="italic text-accent">Estuary</span>
               </h2>
               <p className="text-white/80 leading-relaxed font-light text-lg">
-                As good stewards of the Willapa Bay estuary, we've been farming exceptional oysters for decades. We believe that the best shellfish comes from the healthiest waters.
+                As good stewards of the Willapa Bay estuary, we’ve been farming exceptional oysters for decades. We believe that the best shellfish comes from the healthiest waters.
               </p>
               <p className="text-white/80 leading-relaxed font-light text-lg">
                 Our farming methods actually improve water quality, creating a thriving ecosystem. We produce healthy, plump oysters year-round so you can enjoy the distinctive Pacific flavor in every order.
               </p>
               <Link href="/story">
-                <Button variant="link" className="text-white pl-0 hover:text-accent uppercase tracking-widest text-xs font-sans font-bold mt-4 flex items-center gap-2">
+                <Button variant="link" className="text-white pl-0 hover:text-accent uppercase tracking-widest text-xs font-bold mt-4 flex items-center gap-2">
                   Read Our Story <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
@@ -178,18 +178,18 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 text-center max-w-3xl mx-auto space-y-8">
           <Star className="w-8 h-8 text-accent mx-auto" />
-          <h2 className="font-sans text-3xl md:text-4xl text-foreground font-medium">Wholesale & Direct</h2>
-          <p className="text-muted-foreground text-lg leading-relaxed font-serif">
+          <h2 className="font-serif text-4xl md:text-5xl text-primary">Wholesale & Direct</h2>
+          <p className="text-muted-foreground text-lg leading-relaxed">
             We offer wholesale seafood pricing on all of our fresh shellfish & frozen seafood meals. You can now order wholesale seafood online, direct from Goose Point.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8 max-w-lg mx-auto">
             <Link href="/wholesale">
-              <Button className="w-full bg-primary text-white hover:bg-primary/90 rounded py-6 text-xs uppercase tracking-widest font-sans font-bold">
+              <Button className="w-full bg-primary text-white hover:bg-primary/90 rounded-none py-6 text-xs uppercase tracking-widest font-bold">
                 Wholesale Account
               </Button>
             </Link>
             <Link href="/wholesale">
-              <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/5 rounded py-6 text-xs uppercase tracking-widest font-sans font-bold">
+              <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/5 rounded-none py-6 text-xs uppercase tracking-widest font-bold">
                 Farm Store
               </Button>
             </Link>
@@ -204,22 +204,22 @@ function ProductCard({ id, image, title, price, description }: { id: string, ima
   return (
     <Link href={`/product/${id}`}>
       <motion.div variants={fadeInUp} className="group cursor-pointer">
-        <div className="relative aspect-square overflow-hidden bg-white border border-gray-100 mb-6 rounded">
-          <img
-            src={image}
-            alt={title}
+        <div className="relative aspect-square overflow-hidden bg-white border border-gray-100 mb-6">
+          <img 
+            src={image} 
+            alt={title} 
             className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm border-t border-gray-100">
-            <Button className="w-full bg-primary text-white hover:bg-accent hover:text-white border-none shadow-none uppercase tracking-widest text-xs font-sans font-bold py-4 rounded">
+            <Button className="w-full bg-primary text-white hover:bg-accent hover:text-white border-none shadow-none uppercase tracking-widest text-xs font-bold py-4">
               Add to Cart
             </Button>
           </div>
         </div>
         <div className="text-center space-y-2">
-          <h3 className="font-sans text-lg text-foreground font-medium">{title}</h3>
+          <h3 className="font-serif text-xl text-primary">{title}</h3>
           <p className="font-sans text-accent font-medium tracking-wide">{price}</p>
-          <p className="text-muted-foreground text-sm leading-relaxed px-4 line-clamp-2 font-serif">{description}</p>
+          <p className="text-muted-foreground text-sm leading-relaxed px-4 line-clamp-2">{description}</p>
         </div>
       </motion.div>
     </Link>
